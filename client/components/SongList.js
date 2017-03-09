@@ -30,9 +30,7 @@ class SongList extends Component {
           to="songs/new"
           className="btn-floating btn-large red right"
         >
-          <i className="matrial-icons">
-            add
-          </i>
+          <i className="material-icons">add</i>
         </Link>
       </div>
     )
