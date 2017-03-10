@@ -10,7 +10,7 @@ class SongList extends Component {
       vairables: {
         id,
       }
-    });
+    }).then(() => this.props.data.refetch());
   }
 
   renderSongs() {
@@ -22,13 +22,13 @@ class SongList extends Component {
       return <div>Loading...</div>;
     }
     console.log(songs);
-    return songs.map((song,key) => {
-      console.log(song.id);
+    return songs.map(({ title, id }) => {
+      console.log(id);
       return (
-        <li className="collection-item" key={key}>
-          {song.title}
+        <li className="collection-item" key={id}>
+          {title}
           <i
-            onClick={() => this.onSongDelete(song.id)}
+            onClick={() => this.onSongDelete(id)}
             className="material-icons right"
           >
             delete
